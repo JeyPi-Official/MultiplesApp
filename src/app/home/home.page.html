@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Múltiplos App</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="center">
+    <ion-item>
+      <ion-label position="floating">Ingresa un número</ion-label>
+      <br />
+      <ion-input [(ngModel)]="userInput" type="number"></ion-input>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button expand="full" (click)="calculateMultiples()"
+      >Calcular Múltiplos</ion-button
+    >
+
+    <p>{{ numbers.join(', ') }}</p>
+
+    <div *ngFor="let m of multiples">
+      <p [ngStyle]="{'color': m.color}">
+        {{ userInput }} [{{ m.multiple }}] ({{ m.numbers.join(', ') }} en
+        <span *ngIf="m.multiple === '3'">VERDE</span>
+        <span *ngIf="m.multiple === '5'">ROJO</span>
+        <span *ngIf="m.multiple === '7'">AZUL</span>)
+      </p>
+    </div>
   </div>
 </ion-content>
