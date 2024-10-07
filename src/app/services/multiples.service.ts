@@ -8,6 +8,7 @@ export class MultiplesService {
   constructor(private firestore: AngularFirestore) {}
 
   saveQuery(num: number, result: any) {
+    alert("Saving " + num);
     return this.firestore.collection('queries').add({
       number: num,
       result: result,
