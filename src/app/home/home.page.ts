@@ -17,10 +17,12 @@ export class HomePage {
     this.numbers = [];
     this.multiples = [];
 
+    // create a list from 0 to user number
     for (let i = 0; i <= this.userInput; i++) {
       this.numbers.push(i);
     }
 
+    // get the multiples
     const multiples3 = this.getMultiples(3);
     const multiples5 = this.getMultiples(5);
     const multiples7 = this.getMultiples(7);
@@ -31,9 +33,15 @@ export class HomePage {
       { multiple: '7', numbers: multiples7, color: 'blue' },
     ];
 
-    this.multiplesService.saveQuery(this.userInput, this.numbers, this.multiples);
+    // database query
+    this.multiplesService.saveQuery(
+      this.userInput,
+      this.numbers,
+      this.multiples
+    );
   }
 
+  // individual selection for each multiple
   getMultiples(multiple: number): number[] {
     const multiples: number[] = [];
     for (let i = 0; i <= this.userInput; i++) {

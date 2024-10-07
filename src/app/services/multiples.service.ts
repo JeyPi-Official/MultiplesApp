@@ -7,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class MultiplesService {
   constructor(private firestore: AngularFirestore) {}
 
+  //Firebase query
   saveQuery(num: number, result: any, multiples: any) {
     alert("Saving " + num);
     return this.firestore.collection('queries').add({

@@ -12,12 +12,12 @@
       <ion-input [(ngModel)]="userInput" type="number"></ion-input>
     </ion-item>
 
-    <ion-button expand="full" (click)="calculateMultiples()"
-      >Calcular Múltiplos</ion-button
-    >
+    <ion-button expand="full" (click)="calculateMultiples()">Calcular Múltiplos</ion-button>
 
+    <!-- numbers list -->
     <p>{{ numbers.join(', ') }}</p>
 
+    <!-- multiples list -->
     <div *ngFor="let m of multiples">
       <p [ngStyle]="{'color': m.color}">
         {{ userInput }} [{{ m.multiple }}] ({{ m.numbers.join(', ') }} en
