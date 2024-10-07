@@ -31,7 +31,7 @@ export class HomePage {
       { multiple: '7', numbers: multiples7, color: 'blue' },
     ];
 
-    this.multiplesService.saveQuery(this.userInput, this.numbers);
+    this.multiplesService.saveQuery(this.userInput, this.numbers, this.multiples);
   }
 
   getMultiples(multiple: number): number[] {
